@@ -17,7 +17,7 @@ ui <- fluidPage(
     p("Shows the total number and type of deer harvested in each county by hunt type."),
     h4("Summary Type by County Population"),
     p("Shows the numbers of deer harvested divided by the number of 
-        county residents e.g. 1 deer per 100 residents = 0.01."), 
+        county residents e.g. 1 deer per 100 residents = 0.001."), 
     h4("Summary Type by County Area"),
     p("Shows the numbers of deer harvested
         divided by the total area of that county in square miles e.g. 100 deer per 50 square miles = 2.0."), 
@@ -179,7 +179,7 @@ top.five.plot = function(hunt_type_to_filter_by, summary_type_to_filter_by){
         arrange(desc(Total)) %>%        # sort by Total descending
         slice(1:5) %>%                  # take top 5
         ggplot(aes(x = reorder(County, Total), y = Total)) +
-        geom_col(fill = "steelblue") +
+        geom_col(fill = "#566b51") +
         labs(
             title = title.string,
             x = "County",
